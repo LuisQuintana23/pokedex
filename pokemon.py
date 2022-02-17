@@ -1,6 +1,6 @@
 from random import randint
 
-from archivos import guardarJson
+from funciones_generales.archivos import guardarJson
 
 class Pokemon():
 

@@ -1,4 +1,4 @@
-from archivos import *
+from funciones_generales.archivos import *
 from pokemon import *
 
 pokedex = cargarPokedex() # Carga los datos generales de los pokemones

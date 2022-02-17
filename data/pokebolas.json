@@ -1,0 +1,20 @@
+{
+    "Bulbasaur": {
+        "ataque": "49",
+        "defensa": "49",
+        "exp": "0",
+        "nivel": "0",
+        "nombre": "Bulbasaur",
+        "tipo": "Grass",
+        "vida": "45"
+    },
+    "Pikachu": {
+        "ataque": "55",
+        "defensa": "40",
+        "exp": "0",
+        "nivel": "0",
+        "nombre": "Pikachu",
+        "tipo": "Electric",
+        "vida": "35"
+    }
+}
