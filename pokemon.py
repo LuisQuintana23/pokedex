@@ -1,19 +1,19 @@
 from random import randint
 
+from archivos import guardarJson
+
 class Pokemon():
 
-    def __init__(self, nombre, tipo, hp,ataque, defensa):
+    def __init__(self, nombre, tipo, hp,ataque, defensa, nivel = 0, xp = 0):
         self.nombre = nombre
         self.tipo = tipo
-        self.__ataque = ataque
-        self.__defensa = defensa
-        self.__nivel = 0
-        self.__xp = 0
-        self.__vida = hp
+        self.vida = hp
+        self.ataque = ataque
+        self.defensa = defensa
+        self.nivel = nivel
+        self.xp = xp
 
         self.__last_game = False
-        
-        print(self.__str__())
     
     @property
     def vida(self):
@@ -40,6 +40,22 @@ class Pokemon():
         pass
 
     def __str__(self):
-        return "Pokemon {} creado".format(self.nombre)
+        pass
     
+    # Al finalizar el programa automaticamente se ejecuta este metodo
+    def __del__(self):
+        datos = {
+            'nombre':self.nombre,
+            'tipo':self.tipo,
+            'vida':str(self.vida),
+            'ataque':str(self.ataque),
+            'defensa':str(self.defensa),
+            'nivel':str(self.nivel),
+            'exp':str(self.xp)
+        }
+        # En un diccionario se guardan todos los datos del pokemon
+        # los datos int no se pueden escribir en un json, por lo que son pasados
+        # a str
+        guardarJson(self.nombre, datos)
+        # Se ejecuta la funcion para poder guardar todos los archivos a json
 
