@@ -1,16 +1,19 @@
 from random import randint
+
 class Pokemon():
-    def __init__(self):
-        self.nombre = ""
-        self.tipo = ""
-        self.__ataque = 0
-        self.__defensa = 0
+
+    def __init__(self, nombre, tipo, hp,ataque, defensa):
+        self.nombre = nombre
+        self.tipo = tipo
+        self.__ataque = ataque
+        self.__defensa = defensa
         self.__nivel = 0
         self.__xp = 0
-        self.__vida = 0
+        self.__vida = hp
 
         self.__last_game = False
-
+        
+        print(self.__str__())
     
     @property
     def vida(self):
@@ -35,4 +38,8 @@ class Pokemon():
     
     def evolucionar(self):
         pass
+
+    def __str__(self):
+        return "Pokemon {} creado".format(self.nombre)
+    
 
