@@ -45,5 +45,3 @@ except:
 
 for pokemon in pokemones:
     print('Tienes a {} atrapado'.format(pokemon))
-
-
