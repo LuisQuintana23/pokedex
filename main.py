@@ -1,4 +1,6 @@
 from funciones_generales.archivos import *
+from funciones_generales.funciones import *
+from funciones_generales.excepciones import *
 from pokemon import *
 
 pokedex = cargarPokedex() # Carga los datos generales de los pokemones
@@ -17,31 +19,33 @@ if pokebolas: # Si hay pokemones previamente creados y cargados en el json
         pokemones[pokemon] = pkm
         # Los añade a un diccionario para despues acceder a ellos por medio de su nombre
 
-
-# Instanciar pokemon 
-name = input('¿Qué pokémon quieres atrapar?\n>> ').capitalize().replace(' ','')
-# capitalize -> Primera letra en mayuscula
-# replace -> Elimina los espacios
-try: # Si el pokemon existe en el csv
-    # Para evitar que sobreescriba los datos de un pokemon, revisa si este ya existe
-    # Si no existe, crea al pokemon
-    if not name in pokemones.keys(): 
-        datos = pokedex.loc[name] # toma los datos del pokemon
-        tipo = datos['Type 1']
-        hp = datos['HP']
-        ataque = datos['Attack']
-        defensa = datos['Defense']
-        pokemon = Pokemon(name, tipo, hp, ataque, defensa)
-        # Usando los datos crea el objeto pokemon
-        pokemones[name] = pokemon
-        # Añadimos el pokemon creado al diccinario de pokemones
-        print('Haz logrado capturar a {}'.format(name))
-    else: # Si existe le notifica al usuario que ya lo tiene
-        print('Ya tienes al pokemon {}'.format(name))
-except:
-    print('No existe el pokémon')
-
 # Visualizar pokemones creados 
+#for pokemon in pokemones:
+#    print('Tienes a {} atrapado'.format(pokemon))
 
-for pokemon in pokemones:
-    print('Tienes a {} atrapado'.format(pokemon))
+print("""
+\t*********  POKEDEX  **********
+\t***     PROYECTO FINAL     ***
+\t FUNDAMENTOS DE PROGRAMACIÓN 
+""")
+
+while True:
+    menu_principal()
+    try:
+        entrada_Main = int(input('>> '))
+        Excepciones.validar_Main(entrada_Main)
+
+        if entrada_Main == 1: # Imprimir pokedex
+            print(pokedex)
+        elif entrada_Main == 2: # Atrapar pokemon
+            pokemones = atraparPokemon(pokemones, pokedex)
+        elif entrada_Main == 3: # Estadisticas del pokemon
+            pass
+        else: # entrada_Main == 4 -> Salir
+            print("\n ¡Adios!\n")
+            break
+
+    except ValueError:
+        print("\n** Ingresa un valor válido\n")
+    except Excepciones:
+        print('\n** Ingresa un valor válido\n')
