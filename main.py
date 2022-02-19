@@ -54,3 +54,4 @@ while True:
         print('\n** Ingresa un valor válido\n')
 
     os.system("pause")
+    del(Pokemon)

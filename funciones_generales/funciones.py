@@ -55,9 +55,18 @@ def estadisticas(pokebolas):
 
 def duelo(pokebolas):
     print("¿Qué pokemon deseas usar?\n")
-    counter = 1
     for pokemon in pokebolas:
-        print(f"{counter}.- {pokemon}")
-        counter +=1
+        print(f"{pokemon}")
 
+    poke_selected = input(">>> ").capitalize()#pondra la primera letra en mayuscula para que coincida
+    stats = pokebolas[poke_selected]
+    batalla_pokemon = Pokemon(
+    stats['nombre'],
+    stats['tipo'],
+    stats['vida'],
+    stats['ataque'],
+    stats['defensa'],
+    stats['nivel'],
+    stats['exp'])
 
+    batalla_pokemon.pelear()
