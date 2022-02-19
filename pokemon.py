@@ -15,14 +15,7 @@ class Pokemon():
 
         self.__last_game = False
     
-    @property
-    def vida(self):
-        return self.__vida
-
-    @vida.setter
-    def vida(self, valor):
-        self.__vida = valor
-
+    #def pelear(self, tipo_ataque, vida_enemigo):#
     def pelear(self, tipo_ataque, vida_enemigo):#
         
         

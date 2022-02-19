@@ -10,8 +10,9 @@ def menu_principal():
         [3] Pokémones atrapados
             * Visualiza tus pokemones atrapados
             * Obten estadísticas
+        [4] Duelo de pokemones
             * Duelo de pokemones
-        [4] Salir
+        [5] Salir
     """)
 
 def atraparPokemon(pokemones, pokedex):
@@ -42,8 +43,21 @@ def atraparPokemon(pokemones, pokedex):
         except:
             print('No existe el pokémon')
 
-def duelo():
-    pass
+def estadisticas(pokebolas):
+    print("Estos son tus pokemones\n")
+    for pokemon, stats in pokebolas.items():
+        print(pokemon.center(50, "-"))
+        print("Ataque: {}\nDefensa: {}\nExperiencia: {}\nNivel: {}\nTipo: {}\nVida: {}\n".format(stats['ataque'], 
+        stats['defensa'], stats['exp'], stats["nivel"], stats["tipo"], stats["vida"]))
 
-def estadisticas():
-    pass
+
+
+
+def duelo(pokebolas):
+    print("¿Qué pokemon deseas usar?\n")
+    counter = 1
+    for pokemon in pokebolas:
+        print(f"{counter}.- {pokemon}")
+        counter +=1
+
+
