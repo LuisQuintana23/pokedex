@@ -4,6 +4,7 @@ import numpy as np
 from funciones_generales.archivos import *
 from time import sleep
 from os import system
+import json
 
 from funciones_generales.archivos import guardarJson
 
@@ -67,8 +68,8 @@ class Pokemon():
             sleep(2)
             if self.op_vida <= 0:
                 print("Has derrotado a tu oponente")
+                self.modificar_stats(True)#False es porque perdio
                 batalla = False
-                system("pause")
             else:
                 print(f"Turno de {self.oponente}")
                 sleep(2)
@@ -77,16 +78,24 @@ class Pokemon():
                 self.vida -= op_dano
                 if self.vida <= 0:
                     print("Han derrotado a tu pokemon\n")
-                    system("pause")
+                    self.modificar_stats(False)#False es porque perdio
                     batalla = False
         
 
         
     
     
-    def subir_experiencia(self):
-        #comprobar si gano la batalla con self.__last_game
-        pass
+    def modificar_stats(self, win):
+        if win == True:#en caso de que el pokemon gane
+            with open("./data/pokebolas.json") as file:
+                contenido = json.load(file)
+            contenido[self.nombre]["exp"] += 30
+            with open("./data/pokebolas.json", "w") as file:
+                print(contenido[self.nombre]["exp"])
+                json.dump(contenido, file, indent=4, sort_keys=True)
+
+        else:#en caso de que pierda
+            pass
 
     
     def evolucionar(self):
@@ -100,11 +109,11 @@ class Pokemon():
         datos = {
             'nombre':self.nombre,
             'tipo':self.tipo,
-            'vida':str(self.vida),
-            'ataque':str(self.ataque),
-            'defensa':str(self.defensa),
-            'nivel':str(self.nivel),
-            'exp':str(self.xp)
+            'vida':int(self.vida),
+            'ataque':int(self.ataque),
+            'defensa':int(self.defensa),
+            'nivel':int(self.nivel),
+            'exp':int(self.xp)
         }
         # En un diccionario se guardan todos los datos del pokemon
         # los datos int no se pueden escribir en un json, por lo que son pasados
