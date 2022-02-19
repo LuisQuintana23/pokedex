@@ -49,8 +49,3 @@ while True:
         print("\n** Ingresa un valor válido\n")
     except Excepciones:
         print('\n** Ingresa un valor válido\n')
-    
-
-
-
-
