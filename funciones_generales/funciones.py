@@ -37,6 +37,8 @@ def atraparPokemon(pokemones, pokedex):
                 pokemones[name] = pokemon
                 # Añadimos el pokemon creado al diccinario de pokemones
                 print('Haz logrado capturar a {}'.format(name))
+                pokemon.guardarPokemon()
+                
                 return pokemones
             else: # Si existe le notifica al usuario que ya lo tiene
                 print('Ya tienes al pokemon {}'.format(name))

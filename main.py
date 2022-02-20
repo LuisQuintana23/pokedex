@@ -23,7 +23,6 @@ if pokebolas: # Si hay pokemones previamente creados y cargados en el json
 # Visualizar pokemones creados 
 #for pokemon in pokemones:
 #    print('Tienes a {} atrapado'.format(pokemon))
-print("---------------------------------SIUUUU")
 
 print("""
 \t*********  POKEDEX  **********
@@ -48,7 +47,7 @@ while True:
         else: # entrada_Main == 5 -> Salir
             print("\n ¡Adios!\n")
             break
-        
+        print(pokemones)
     except ValueError:
         print("\n** Ingresa un valor válido\n")
     except Excepciones:

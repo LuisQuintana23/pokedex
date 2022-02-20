@@ -105,7 +105,7 @@ class Pokemon():
         pass
     
     # Al finalizar el programa automaticamente se ejecuta este metodo
-    def __del__(self):
+    """def __del__(self):
         datos = {
             'nombre':self.nombre,
             'tipo':self.tipo,
@@ -120,6 +120,22 @@ class Pokemon():
         # a str
         guardarJson(self.nombre, datos)
         # Se ejecuta la funcion para poder guardar todos los archivos a json
+    """
+
+    def guardarPokemon(self):
+        pokemon_dict = {
+            'nombre':self.nombre,
+            'tipo':self.tipo,
+            'vida':int(self.vida),
+            'ataque':int(self.ataque),
+            'defensa':int(self.defensa),
+            'nivel':int(self.nivel),
+            'exp':int(self.xp)
+        }
+        # En un diccionario se guardan todos los datos del pokemon
+        # los datos int no se pueden escribir en un json, por lo que son pasados
+        # a str
+        guardarJson(self.nombre, pokemon_dict)
 
 if "__main__" == __name__:
     batalla_pokemon = Pokemon("Bulbasaur", "Electric", 49, 45, 49, 0, 0)
