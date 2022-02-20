@@ -43,9 +43,15 @@ while True:
         elif entrada_Main == 2: # Atrapar pokemon
             pokemones = atraparPokemon(pokemones, pokedex)
         elif entrada_Main == 3: # Estadisticas del pokemon
-            estadisticas(pokebolas)
+            if pokebolas:
+                estadisticas(pokebolas)
+            else:
+                print("\n** Bloqueado **\n Primero debes capturar un pokemon\n")
         elif entrada_Main == 4:
-            duelo(pokebolas)
+            if pokebolas:
+                duelo(pokebolas)
+            else:
+                print("\n** Bloqueado **\n Primero debes capturar un pokemon\n")
         else: # entrada_Main == 5 -> Salir
             print("\n ¡Adios!\n")
             break
