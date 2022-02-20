@@ -23,6 +23,7 @@ if pokebolas: # Si hay pokemones previamente creados y cargados en el json
 # Visualizar pokemones creados 
 #for pokemon in pokemones:
 #    print('Tienes a {} atrapado'.format(pokemon))
+print("---------------------------------SIUUUU")
 
 print("""
 \t*********  POKEDEX  **********
