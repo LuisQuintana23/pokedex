@@ -54,19 +54,20 @@ class Pokemon():
         print(f"Tu oponentes es {self.oponente}\n")
         batalla = True
         #Almacenamiento de vida maxima de cada pokemon        
-        vida_max = self.vida
+        vida_max = self.vida#se almacena ya que self.vida estará cambiando
         op_vida_max = self.op_vida
 
         sleep(3)
         print("COMIENZA LA BATALLA".center(50, "-"))#agrega giones al inicio y final de la cadena
+        print("\n")
         while batalla:
             #MUESTRA LA VIDA DE AMBOS POKEMONES
             print(f"\t{self.nombre}")
-            self.barra_vida(float(self.vida), vida_max, 20)
+            self.barra_vida(self.vida, vida_max, 20)
             print(f"Vida: {round(self.vida, 2)}\n")
 
             print(f"\t{self.oponente}")
-            self.barra_vida(float(self.op_vida), op_vida_max, 15)#se coloca 15, ya que por alguna razon la barra de oponente se coloca mas grande
+            self.barra_vida(self.op_vida, op_vida_max, 15)#se coloca 15, ya que la barra de oponente se coloca mas grande
             print(f"Vida: {round(self.op_vida, 2)}\n")
             
 
