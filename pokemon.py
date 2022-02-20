@@ -37,6 +37,7 @@ class Pokemon():
     
     #def pelear(self, tipo_ataque, vida_enemigo):#
     def pelear(self):
+
         print(f"Has seleccionado a {self.nombre}")
         self.almacenar_oponentes()
         print(f"Tu oponentes es {self.oponente}")
@@ -66,6 +67,7 @@ class Pokemon():
             print(f"\nDaño ocasionado: {dano}")
             self.op_vida -= dano
             sleep(2)
+            #se verificara que no se haya derrotado el pokemon
             if self.op_vida <= 0:
                 print("Has derrotado a tu oponente")
                 self.modificar_stats(True)#False es porque perdio
@@ -86,16 +88,35 @@ class Pokemon():
     
     
     def modificar_stats(self, win):
-        if win == True:#en caso de que el pokemon gane
-            with open("./data/pokebolas.json") as file:
-                contenido = json.load(file)
-            contenido[self.nombre]["exp"] += 30
-            with open("./data/pokebolas.json", "w") as file:
-                print(contenido[self.nombre]["exp"])
-                json.dump(contenido, file, indent=4, sort_keys=True)
+        with open("./data/pokebolas.json") as file:
+            contenido = json.load(file)
 
+        if win == True:#en caso de que el pokemon gane
+            contenido[self.nombre]["exp"] += 30#suma 30 de experiencia
+            
         else:#en caso de que pierda
-            pass
+            contenido[self.nombre]["exp"] += 10#suma 10 de experiencia
+
+        ##PROCESO DE SUBIR NIVEL
+        if contenido[self.nombre]["exp"] >= 60*(contenido[self.nombre]["nivel"]+1):
+            """""
+            Supongamos que el nivel es 0, se suma uno y se multiplica por 60
+            por lo tanto, se debera alcanzar una experiencia de 60 para subir al primer nivel,
+            y un experiencia de 120 para subir al segundo
+            """
+            contenido[self.nombre]["nivel"] += 1
+            contenido[self.nombre]["ataque"] += 5
+            contenido[self.nombre]["defensa"] += 5
+            contenido[self.nombre]["vida"] += 7
+            print("\n\n")
+            print("HAS SUBIDO DE NIVEL".center(50, "/"))
+            print("\nNivel actual: {}\nAtaque: +5\nDefensa: +5\nVida: +7\n".format(contenido[self.nombre]["nivel"]))
+
+
+        with open("./data/pokebolas.json", "w") as file:#guarda el archivo json con los cambios
+            json.dump(contenido, file, indent=4, sort_keys=True)
+
+
 
     
     def evolucionar(self):
