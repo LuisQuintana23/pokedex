@@ -1,6 +1,9 @@
+from inspect import Traceback
 from pokemon import *
+from funciones_generales.grafica import imprimir_grafica
 import platform
 import os
+import json
 
 def menu_principal():
     print('MENU PRINCIPAL')
@@ -11,7 +14,7 @@ def menu_principal():
             * Atrapa tus pokémones favoritos
         [3] Pokémones atrapados
             * Visualiza tus pokemones atrapados
-            * Obten estadísticas
+            * Obten estadísticas en gráfica
         [4] Duelo de pokemones
             * Duelo de pokemones
         [5] Salir
@@ -61,13 +64,53 @@ def pausar():#pausa la pantalla para que el usuario pueda ver los datos
 
 
 def estadisticas(pokebolas):
-    print("Estos son tus pokemones\n")
-    for pokemon, stats in pokebolas.items():
-        print(pokemon.center(50, "-"))
-        print("Ataque: {}\nDefensa: {}\nExperiencia: {}\nNivel: {}\nTipo: {}\nVida: {}\n".format(stats['ataque'], 
-        stats['defensa'], stats['exp'], stats["nivel"], stats["tipo"], stats["vida"]))
+    print("Selecciona un pokemon\n")
+    nombres_pokemones = list(pokebolas.keys())
+    for pokemon in pokebolas:
+        print(f'{pokemon}')
+    print("\nRegresar\n")
+    bucle_select = True
+
+    while bucle_select:
+        try:
+            poke_elect = input("\n>> ").capitalize()
+
+            if poke_elect == "Regresar":
+                break
+            elif poke_elect not in nombres_pokemones:#en caso de que el valor no este en la lista
+                raise ValueError
 
 
+            limpiar_pantalla()
+            bucle_select = False
+
+        except ValueError:
+            print("\nSelecciona una opción valida\n")
+        except KeyError:
+            print("\nSelecciona una opción valida\n")
+
+    bucle_select = True
+
+    while bucle_select:
+        try:
+            
+            print(f"\n¿Qué estadística deseas de {poke_elect}?\n")
+            print("\nVida\nAtaque\nDefensa\nNivel\nExperiencia\n")
+
+            stat_elect = input("\n>>").lower()
+
+            #cargar historila y obtener la lista
+            with open("./data/historial.json", "r") as file:
+                contenido = json.load(file)
+            list_stat = contenido[poke_elect][stat_elect]#almacena la lista para pasarcela a imprimir_grafica
+
+            imprimir_grafica(list_stat, stat_elect.capitalize(), poke_elect)
+            bucle_select = False
+
+        except ValueError:
+            print("\nSelecciona una opción valida\n")
+        except KeyError:
+            print("\nSelecciona una opción valida\n")
 
 
 def duelo(pokebolas):

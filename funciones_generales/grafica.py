@@ -9,9 +9,9 @@ def imprimir_grafica(lista, grafica, pokemon):
     combates = range(len(lista)) # Obtiene el numero de combates mediante la longitud de la lista
     ax.plot(combates, lista) # Crea la grafica
     # Formato para los ejes y el titulo
-    ax.set_xlabel('{}'.format(grafica).capitalize(), fontdict={'fontsize':16,'family':'fantasy','color':'tab:red'})
-    ax.set_ylabel('Combates', fontdict={'fontsize':16,'family':'fantasy','color':'tab:red'})
-    ax.set_title('Grafica de {} de {}'.format(grafica, pokemon), fontdict={'fontsize':20,'fontweight':'bold','color':'y'})
+    ax.set_ylabel('{}'.format(grafica).capitalize(), fontdict={'fontsize':16,'family':'calibri','color':'tab:red'})
+    ax.set_xlabel('Combates', fontdict={'fontsize':16,'family':'calibri','color':'tab:red'})
+    ax.set_title('Gráfica de {} de {}'.format(grafica, pokemon), fontdict={'fontsize':20,'fontweight':'bold','color':'y'})
     plt.show() # Se muestra la grafica
 
 if "__main__" == __name__:

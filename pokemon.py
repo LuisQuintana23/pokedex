@@ -68,7 +68,7 @@ class Pokemon():
             print(f"Vida: {round(self.vida, 2)}\n")
 
             print(f"\t{self.oponente}")
-            self.barra_vida(self.op_vida, op_vida_max, 15)#se coloca 15, ya que la barra de oponente se coloca mas grande
+            self.barra_vida(self.op_vida, op_vida_max, 15)
             print(f"Vida: {round(self.op_vida, 2)}\n")
             
 
