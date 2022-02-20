@@ -2,6 +2,7 @@ import pandas as pd # lectura de archivos csv
 import json # lectura y escritura de archivos json
 import os # creacion y verificacion de carpetas
 import ssl # verificacion de certificados de url
+from io import open
 
 ssl._create_default_https_context = ssl._create_unverified_context
 # Esta instrucciona ayuda a validar los certificados para poder usar 
@@ -61,3 +62,26 @@ def cargarJson():
 
 # Para tener una mejor visualizacion del json en visual studio code
 # shift + alt + f
+
+def guardarJsonTodos():#genera json con todos los pokemones a partir del csv
+    filt_todos = pd.read_csv("./data/_pokemones.csv")
+    filt_todos = filt_todos.set_index("Name")
+    filt_todos = filt_todos.drop(["Type 1", "Generation"], axis=1)
+    filt_todos.to_json("./data/oponentes.json", orient='index')
+    del(filt_todos)# elimina la variable ya que no la necesitamos
+
+    with open("./data/oponentes.json", "r") as file:
+        contenido = json.load(file)
+
+    with open('./data/oponentes.json', 'w') as file:#acomoda las claves del json
+        contenido = json.dump(contenido, file, indent=4, sort_keys=True)#ordena claves y valores
+
+def cargarJsonTodos():
+    with open("./data/oponentes.json", "r") as file:
+        contenido = json.load(file)
+    return contenido
+
+
+
+if "__main__" == __name__:
+    guardarJsonTodos()

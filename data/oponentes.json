@@ -1,0 +1,832 @@
+{
+    "Abra": {
+        "Attack": 20,
+        "Defense": 15,
+        "HP": 25
+    },
+    "Aerodactyl": {
+        "Attack": 105,
+        "Defense": 65,
+        "HP": 80
+    },
+    "AerodactylMega Aerodactyl": {
+        "Attack": 135,
+        "Defense": 85,
+        "HP": 80
+    },
+    "Alakazam": {
+        "Attack": 50,
+        "Defense": 45,
+        "HP": 55
+    },
+    "AlakazamMega Alakazam": {
+        "Attack": 50,
+        "Defense": 65,
+        "HP": 55
+    },
+    "Arbok": {
+        "Attack": 85,
+        "Defense": 69,
+        "HP": 60
+    },
+    "Arcanine": {
+        "Attack": 110,
+        "Defense": 80,
+        "HP": 90
+    },
+    "Articuno": {
+        "Attack": 85,
+        "Defense": 100,
+        "HP": 90
+    },
+    "Beedrill": {
+        "Attack": 90,
+        "Defense": 40,
+        "HP": 65
+    },
+    "BeedrillMega Beedrill": {
+        "Attack": 150,
+        "Defense": 40,
+        "HP": 65
+    },
+    "Bellsprout": {
+        "Attack": 75,
+        "Defense": 35,
+        "HP": 50
+    },
+    "Blastoise": {
+        "Attack": 83,
+        "Defense": 100,
+        "HP": 79
+    },
+    "BlastoiseMega Blastoise": {
+        "Attack": 103,
+        "Defense": 120,
+        "HP": 79
+    },
+    "Bulbasaur": {
+        "Attack": 49,
+        "Defense": 49,
+        "HP": 45
+    },
+    "Butterfree": {
+        "Attack": 45,
+        "Defense": 50,
+        "HP": 60
+    },
+    "Caterpie": {
+        "Attack": 30,
+        "Defense": 35,
+        "HP": 45
+    },
+    "Chansey": {
+        "Attack": 5,
+        "Defense": 5,
+        "HP": 250
+    },
+    "Charizard": {
+        "Attack": 84,
+        "Defense": 78,
+        "HP": 78
+    },
+    "CharizardMega Charizard X": {
+        "Attack": 130,
+        "Defense": 111,
+        "HP": 78
+    },
+    "CharizardMega Charizard Y": {
+        "Attack": 104,
+        "Defense": 78,
+        "HP": 78
+    },
+    "Charmander": {
+        "Attack": 52,
+        "Defense": 43,
+        "HP": 39
+    },
+    "Charmeleon": {
+        "Attack": 64,
+        "Defense": 58,
+        "HP": 58
+    },
+    "Clefable": {
+        "Attack": 70,
+        "Defense": 73,
+        "HP": 95
+    },
+    "Clefairy": {
+        "Attack": 45,
+        "Defense": 48,
+        "HP": 70
+    },
+    "Cloyster": {
+        "Attack": 95,
+        "Defense": 180,
+        "HP": 50
+    },
+    "Cubone": {
+        "Attack": 50,
+        "Defense": 95,
+        "HP": 50
+    },
+    "Dewgong": {
+        "Attack": 70,
+        "Defense": 80,
+        "HP": 90
+    },
+    "Diglett": {
+        "Attack": 55,
+        "Defense": 25,
+        "HP": 10
+    },
+    "Ditto": {
+        "Attack": 48,
+        "Defense": 48,
+        "HP": 48
+    },
+    "Dodrio": {
+        "Attack": 110,
+        "Defense": 70,
+        "HP": 60
+    },
+    "Doduo": {
+        "Attack": 85,
+        "Defense": 45,
+        "HP": 35
+    },
+    "Dragonair": {
+        "Attack": 84,
+        "Defense": 65,
+        "HP": 61
+    },
+    "Dragonite": {
+        "Attack": 134,
+        "Defense": 95,
+        "HP": 91
+    },
+    "Dratini": {
+        "Attack": 64,
+        "Defense": 45,
+        "HP": 41
+    },
+    "Drowzee": {
+        "Attack": 48,
+        "Defense": 45,
+        "HP": 60
+    },
+    "Dugtrio": {
+        "Attack": 80,
+        "Defense": 50,
+        "HP": 35
+    },
+    "Eevee": {
+        "Attack": 55,
+        "Defense": 50,
+        "HP": 55
+    },
+    "Ekans": {
+        "Attack": 60,
+        "Defense": 44,
+        "HP": 35
+    },
+    "Electabuzz": {
+        "Attack": 83,
+        "Defense": 57,
+        "HP": 65
+    },
+    "Electrode": {
+        "Attack": 50,
+        "Defense": 70,
+        "HP": 60
+    },
+    "Exeggcute": {
+        "Attack": 40,
+        "Defense": 80,
+        "HP": 60
+    },
+    "Exeggutor": {
+        "Attack": 95,
+        "Defense": 85,
+        "HP": 95
+    },
+    "Farfetch'd": {
+        "Attack": 65,
+        "Defense": 55,
+        "HP": 52
+    },
+    "Fearow": {
+        "Attack": 90,
+        "Defense": 65,
+        "HP": 65
+    },
+    "Flareon": {
+        "Attack": 130,
+        "Defense": 60,
+        "HP": 65
+    },
+    "Gastly": {
+        "Attack": 35,
+        "Defense": 30,
+        "HP": 30
+    },
+    "Gengar": {
+        "Attack": 65,
+        "Defense": 60,
+        "HP": 60
+    },
+    "GengarMega Gengar": {
+        "Attack": 65,
+        "Defense": 80,
+        "HP": 60
+    },
+    "Geodude": {
+        "Attack": 80,
+        "Defense": 100,
+        "HP": 40
+    },
+    "Gloom": {
+        "Attack": 65,
+        "Defense": 70,
+        "HP": 60
+    },
+    "Golbat": {
+        "Attack": 80,
+        "Defense": 70,
+        "HP": 75
+    },
+    "Goldeen": {
+        "Attack": 67,
+        "Defense": 60,
+        "HP": 45
+    },
+    "Golduck": {
+        "Attack": 82,
+        "Defense": 78,
+        "HP": 80
+    },
+    "Golem": {
+        "Attack": 120,
+        "Defense": 130,
+        "HP": 80
+    },
+    "Graveler": {
+        "Attack": 95,
+        "Defense": 115,
+        "HP": 55
+    },
+    "Grimer": {
+        "Attack": 80,
+        "Defense": 50,
+        "HP": 80
+    },
+    "Growlithe": {
+        "Attack": 70,
+        "Defense": 45,
+        "HP": 55
+    },
+    "Gyarados": {
+        "Attack": 125,
+        "Defense": 79,
+        "HP": 95
+    },
+    "GyaradosMega Gyarados": {
+        "Attack": 155,
+        "Defense": 109,
+        "HP": 95
+    },
+    "Haunter": {
+        "Attack": 50,
+        "Defense": 45,
+        "HP": 45
+    },
+    "Hitmonchan": {
+        "Attack": 105,
+        "Defense": 79,
+        "HP": 50
+    },
+    "Hitmonlee": {
+        "Attack": 120,
+        "Defense": 53,
+        "HP": 50
+    },
+    "Horsea": {
+        "Attack": 40,
+        "Defense": 70,
+        "HP": 30
+    },
+    "Hypno": {
+        "Attack": 73,
+        "Defense": 70,
+        "HP": 85
+    },
+    "Ivysaur": {
+        "Attack": 62,
+        "Defense": 63,
+        "HP": 60
+    },
+    "Jigglypuff": {
+        "Attack": 45,
+        "Defense": 20,
+        "HP": 115
+    },
+    "Jolteon": {
+        "Attack": 65,
+        "Defense": 60,
+        "HP": 65
+    },
+    "Jynx": {
+        "Attack": 50,
+        "Defense": 35,
+        "HP": 65
+    },
+    "Kabuto": {
+        "Attack": 80,
+        "Defense": 90,
+        "HP": 30
+    },
+    "Kabutops": {
+        "Attack": 115,
+        "Defense": 105,
+        "HP": 60
+    },
+    "Kadabra": {
+        "Attack": 35,
+        "Defense": 30,
+        "HP": 40
+    },
+    "Kakuna": {
+        "Attack": 25,
+        "Defense": 50,
+        "HP": 45
+    },
+    "Kangaskhan": {
+        "Attack": 95,
+        "Defense": 80,
+        "HP": 105
+    },
+    "KangaskhanMega Kangaskhan": {
+        "Attack": 125,
+        "Defense": 100,
+        "HP": 105
+    },
+    "Kingler": {
+        "Attack": 130,
+        "Defense": 115,
+        "HP": 55
+    },
+    "Koffing": {
+        "Attack": 65,
+        "Defense": 95,
+        "HP": 40
+    },
+    "Krabby": {
+        "Attack": 105,
+        "Defense": 90,
+        "HP": 30
+    },
+    "Lapras": {
+        "Attack": 85,
+        "Defense": 80,
+        "HP": 130
+    },
+    "Lickitung": {
+        "Attack": 55,
+        "Defense": 75,
+        "HP": 90
+    },
+    "Machamp": {
+        "Attack": 130,
+        "Defense": 80,
+        "HP": 90
+    },
+    "Machoke": {
+        "Attack": 100,
+        "Defense": 70,
+        "HP": 80
+    },
+    "Machop": {
+        "Attack": 80,
+        "Defense": 50,
+        "HP": 70
+    },
+    "Magikarp": {
+        "Attack": 10,
+        "Defense": 55,
+        "HP": 20
+    },
+    "Magmar": {
+        "Attack": 95,
+        "Defense": 57,
+        "HP": 65
+    },
+    "Magnemite": {
+        "Attack": 35,
+        "Defense": 70,
+        "HP": 25
+    },
+    "Magneton": {
+        "Attack": 60,
+        "Defense": 95,
+        "HP": 50
+    },
+    "Mankey": {
+        "Attack": 80,
+        "Defense": 35,
+        "HP": 40
+    },
+    "Marowak": {
+        "Attack": 80,
+        "Defense": 110,
+        "HP": 60
+    },
+    "Meowth": {
+        "Attack": 45,
+        "Defense": 35,
+        "HP": 40
+    },
+    "Metapod": {
+        "Attack": 20,
+        "Defense": 55,
+        "HP": 50
+    },
+    "Mew": {
+        "Attack": 100,
+        "Defense": 100,
+        "HP": 100
+    },
+    "Mewtwo": {
+        "Attack": 110,
+        "Defense": 90,
+        "HP": 106
+    },
+    "MewtwoMega Mewtwo X": {
+        "Attack": 190,
+        "Defense": 100,
+        "HP": 106
+    },
+    "MewtwoMega Mewtwo Y": {
+        "Attack": 150,
+        "Defense": 70,
+        "HP": 106
+    },
+    "Moltres": {
+        "Attack": 100,
+        "Defense": 90,
+        "HP": 90
+    },
+    "Mr. Mime": {
+        "Attack": 45,
+        "Defense": 65,
+        "HP": 40
+    },
+    "Muk": {
+        "Attack": 105,
+        "Defense": 75,
+        "HP": 105
+    },
+    "Nidoking": {
+        "Attack": 102,
+        "Defense": 77,
+        "HP": 81
+    },
+    "Nidoqueen": {
+        "Attack": 92,
+        "Defense": 87,
+        "HP": 90
+    },
+    "Nidoran\u2640": {
+        "Attack": 47,
+        "Defense": 52,
+        "HP": 55
+    },
+    "Nidoran\u2642": {
+        "Attack": 57,
+        "Defense": 40,
+        "HP": 46
+    },
+    "Nidorina": {
+        "Attack": 62,
+        "Defense": 67,
+        "HP": 70
+    },
+    "Nidorino": {
+        "Attack": 72,
+        "Defense": 57,
+        "HP": 61
+    },
+    "Ninetales": {
+        "Attack": 76,
+        "Defense": 75,
+        "HP": 73
+    },
+    "Oddish": {
+        "Attack": 50,
+        "Defense": 55,
+        "HP": 45
+    },
+    "Omanyte": {
+        "Attack": 40,
+        "Defense": 100,
+        "HP": 35
+    },
+    "Omastar": {
+        "Attack": 60,
+        "Defense": 125,
+        "HP": 70
+    },
+    "Onix": {
+        "Attack": 45,
+        "Defense": 160,
+        "HP": 35
+    },
+    "Paras": {
+        "Attack": 70,
+        "Defense": 55,
+        "HP": 35
+    },
+    "Parasect": {
+        "Attack": 95,
+        "Defense": 80,
+        "HP": 60
+    },
+    "Persian": {
+        "Attack": 70,
+        "Defense": 60,
+        "HP": 65
+    },
+    "Pidgeot": {
+        "Attack": 80,
+        "Defense": 75,
+        "HP": 83
+    },
+    "PidgeotMega Pidgeot": {
+        "Attack": 80,
+        "Defense": 80,
+        "HP": 83
+    },
+    "Pidgeotto": {
+        "Attack": 60,
+        "Defense": 55,
+        "HP": 63
+    },
+    "Pidgey": {
+        "Attack": 45,
+        "Defense": 40,
+        "HP": 40
+    },
+    "Pikachu": {
+        "Attack": 55,
+        "Defense": 40,
+        "HP": 35
+    },
+    "Pinsir": {
+        "Attack": 125,
+        "Defense": 100,
+        "HP": 65
+    },
+    "PinsirMega Pinsir": {
+        "Attack": 155,
+        "Defense": 120,
+        "HP": 65
+    },
+    "Poliwag": {
+        "Attack": 50,
+        "Defense": 40,
+        "HP": 40
+    },
+    "Poliwhirl": {
+        "Attack": 65,
+        "Defense": 65,
+        "HP": 65
+    },
+    "Poliwrath": {
+        "Attack": 95,
+        "Defense": 95,
+        "HP": 90
+    },
+    "Ponyta": {
+        "Attack": 85,
+        "Defense": 55,
+        "HP": 50
+    },
+    "Porygon": {
+        "Attack": 60,
+        "Defense": 70,
+        "HP": 65
+    },
+    "Primeape": {
+        "Attack": 105,
+        "Defense": 60,
+        "HP": 65
+    },
+    "Psyduck": {
+        "Attack": 52,
+        "Defense": 48,
+        "HP": 50
+    },
+    "Raichu": {
+        "Attack": 90,
+        "Defense": 55,
+        "HP": 60
+    },
+    "Rapidash": {
+        "Attack": 100,
+        "Defense": 70,
+        "HP": 65
+    },
+    "Raticate": {
+        "Attack": 81,
+        "Defense": 60,
+        "HP": 55
+    },
+    "Rattata": {
+        "Attack": 56,
+        "Defense": 35,
+        "HP": 30
+    },
+    "Rhydon": {
+        "Attack": 130,
+        "Defense": 120,
+        "HP": 105
+    },
+    "Rhyhorn": {
+        "Attack": 85,
+        "Defense": 95,
+        "HP": 80
+    },
+    "Sandshrew": {
+        "Attack": 75,
+        "Defense": 85,
+        "HP": 50
+    },
+    "Sandslash": {
+        "Attack": 100,
+        "Defense": 110,
+        "HP": 75
+    },
+    "Scyther": {
+        "Attack": 110,
+        "Defense": 80,
+        "HP": 70
+    },
+    "Seadra": {
+        "Attack": 65,
+        "Defense": 95,
+        "HP": 55
+    },
+    "Seaking": {
+        "Attack": 92,
+        "Defense": 65,
+        "HP": 80
+    },
+    "Seel": {
+        "Attack": 45,
+        "Defense": 55,
+        "HP": 65
+    },
+    "Shellder": {
+        "Attack": 65,
+        "Defense": 100,
+        "HP": 30
+    },
+    "Slowbro": {
+        "Attack": 75,
+        "Defense": 110,
+        "HP": 95
+    },
+    "SlowbroMega Slowbro": {
+        "Attack": 75,
+        "Defense": 180,
+        "HP": 95
+    },
+    "Slowpoke": {
+        "Attack": 65,
+        "Defense": 65,
+        "HP": 90
+    },
+    "Snorlax": {
+        "Attack": 110,
+        "Defense": 65,
+        "HP": 160
+    },
+    "Spearow": {
+        "Attack": 60,
+        "Defense": 30,
+        "HP": 40
+    },
+    "Squirtle": {
+        "Attack": 48,
+        "Defense": 65,
+        "HP": 44
+    },
+    "Starmie": {
+        "Attack": 75,
+        "Defense": 85,
+        "HP": 60
+    },
+    "Staryu": {
+        "Attack": 45,
+        "Defense": 55,
+        "HP": 30
+    },
+    "Tangela": {
+        "Attack": 55,
+        "Defense": 115,
+        "HP": 65
+    },
+    "Tauros": {
+        "Attack": 100,
+        "Defense": 95,
+        "HP": 75
+    },
+    "Tentacool": {
+        "Attack": 40,
+        "Defense": 35,
+        "HP": 40
+    },
+    "Tentacruel": {
+        "Attack": 70,
+        "Defense": 65,
+        "HP": 80
+    },
+    "Vaporeon": {
+        "Attack": 65,
+        "Defense": 60,
+        "HP": 130
+    },
+    "Venomoth": {
+        "Attack": 65,
+        "Defense": 60,
+        "HP": 70
+    },
+    "Venonat": {
+        "Attack": 55,
+        "Defense": 50,
+        "HP": 60
+    },
+    "Venusaur": {
+        "Attack": 82,
+        "Defense": 83,
+        "HP": 80
+    },
+    "VenusaurMega Venusaur": {
+        "Attack": 100,
+        "Defense": 123,
+        "HP": 80
+    },
+    "Victreebel": {
+        "Attack": 105,
+        "Defense": 65,
+        "HP": 80
+    },
+    "Vileplume": {
+        "Attack": 80,
+        "Defense": 85,
+        "HP": 75
+    },
+    "Voltorb": {
+        "Attack": 30,
+        "Defense": 50,
+        "HP": 40
+    },
+    "Vulpix": {
+        "Attack": 41,
+        "Defense": 40,
+        "HP": 38
+    },
+    "Wartortle": {
+        "Attack": 63,
+        "Defense": 80,
+        "HP": 59
+    },
+    "Weedle": {
+        "Attack": 35,
+        "Defense": 30,
+        "HP": 40
+    },
+    "Weepinbell": {
+        "Attack": 90,
+        "Defense": 50,
+        "HP": 65
+    },
+    "Weezing": {
+        "Attack": 90,
+        "Defense": 120,
+        "HP": 65
+    },
+    "Wigglytuff": {
+        "Attack": 70,
+        "Defense": 45,
+        "HP": 140
+    },
+    "Zapdos": {
+        "Attack": 90,
+        "Defense": 85,
+        "HP": 90
+    },
+    "Zubat": {
+        "Attack": 45,
+        "Defense": 35,
+        "HP": 40
+    }
+}

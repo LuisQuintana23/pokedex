@@ -4,5 +4,5 @@ class Excepciones(Exception):
     
     @staticmethod
     def validar_Main(n):
-        if n > 4 or n <= 0:
+        if n > 5 or n <= 0:
             raise Excepciones
