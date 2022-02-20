@@ -31,6 +31,7 @@ print("""
 """)
 
 while True:
+    limpiar_pantalla()
     pokebolas = cargarJson()
     menu_principal()
     try:
@@ -53,5 +54,9 @@ while True:
         print("\n** Ingresa un valor válido\n")
     except Excepciones:
         print('\n** Ingresa un valor válido\n')
+    except KeyboardInterrupt:
+        print("\n ¡Adios!\n")
+        break
 
-    os.system("pause")
+
+    pausar()

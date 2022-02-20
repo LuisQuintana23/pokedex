@@ -1,4 +1,5 @@
-from random import randint, choice, random
+from multiprocessing.sharedctypes import Value
+from random import randint, choice, uniform
 import pandas as pd
 import numpy as np
 from funciones_generales.archivos import *
@@ -34,52 +35,101 @@ class Pokemon():
         self.op_vida = datos_pokemones[self.oponente]["HP"]
         self.op_ataque = datos_pokemones[self.oponente]["Attack"]
         self.op_defensa = datos_pokemones[self.oponente]["Defense"]
+
+    def barra_vida(self, vida, vida_maxima, divisiones):
+        convertir_divisiones = int(vida_maxima/divisiones)
+        divisones_actuales = int(vida/convertir_divisiones)
+        vida_restante = divisiones - divisones_actuales
+
+        vida_pantalla = "-" * divisones_actuales
+        restante_pantalla = ' ' * vida_restante
+
+        print("|" + vida_pantalla + restante_pantalla + "|")
+
     
     #def pelear(self, tipo_ataque, vida_enemigo):#
     def pelear(self):
-
         print(f"Has seleccionado a {self.nombre}")
         self.almacenar_oponentes()
-        print(f"Tu oponentes es {self.oponente}")
+        print(f"Tu oponentes es {self.oponente}\n")
         batalla = True
+        #Almacenamiento de vida maxima de cada pokemon        
+        vida_max = self.vida
+        op_vida_max = self.op_vida
+
         sleep(3)
-        print("COMIENZA LA BATALLA")
+        print("COMIENZA LA BATALLA".center(50, "-"))#agrega giones al inicio y final de la cadena
         while batalla:
+            #MUESTRA LA VIDA DE AMBOS POKEMONES
             print(f"\t{self.nombre}")
-            print(f"Vida: {self.vida}\n")
+            self.barra_vida(float(self.vida), vida_max, 20)
+            print(f"Vida: {round(self.vida, 2)}\n")
 
             print(f"\t{self.oponente}")
-            print(f"Vida: {self.op_vida}\n")
-            t_ataque = int(input(f"\nSelecciona el tipo de ataque de {self.nombre}\n1.-Fuerte\n2.-Medio\n3.-Bajo\n>> "))
-            dano = 0
-            if t_ataque == 1:
-                print("Ataque fuerte")
-                #se tiene menos probabilidad de realizar un ataque fuerte o critico
-                dano = randint(self.ataque-30, self.ataque)
-            elif t_ataque == 2:
-                print("Ataque medio")
-                dano = randint(self.ataque-20, self.ataque-15)
-            elif t_ataque == 3:#se hara un ataque bajo
-                print("Ataque bajo")
-                dano = randint(self.ataque-22, self.ataque-20)
-            else:
-                print("Opcion no valida")
+            self.barra_vida(float(self.op_vida), op_vida_max, 15)#se coloca 15, ya que por alguna razon la barra de oponente se coloca mas grande
+            print(f"Vida: {round(self.op_vida, 2)}\n")
+            
+
+
+            bucle_eleccion = True
+            while bucle_eleccion:
+                try:
+                    t_ataque = int(input(f"\nSelecciona el tipo de ataque de {self.nombre}\n\n1.-Fuerte\n2.-Medio\n3.-Bajo\n>>> "))
+                    dano = 0
+                    #el usuario debera seleccionar entre realizar estos 3 ataques, entre mas fuerte sea
+                    #menor posibilidad de ocasior buen daño
+                    if t_ataque == 1:
+                        print("Ataque fuerte")
+                        #se tiene menos probabilidad de realizar un ataque fuerte o critico
+                        dano = round(uniform(self.ataque*0.18, self.ataque), 1)#uniform permite obtener numero random de floats
+                        #rounde redondea un numero a los decimales especificados en el segundo parametro
+                        bucle_eleccion = False
+                    elif t_ataque == 2:
+                        print("Ataque medio")
+                        dano = round(uniform(self.ataque*0.32, self.ataque*0.5), 1)#se multiplica por un decimal, para obtener un porcentaje del ataque
+                        #la multiplicacion por decimal se hizo, porque no todos los pokemones tienen el mismo daño
+                        bucle_eleccion = False
+                    elif t_ataque == 3:#se hara un ataque bajo
+                        print("Ataque bajo")
+                        dano = round(self.ataque*0.34, 1)
+                        bucle_eleccion = False
+                    else:
+                        raise ValueError
+                except ValueError:
+                    print("\nOpcion no valida\n")
+
+            print(f"\nPotencia de ataque: {dano}")
+            escudo = round(uniform(self.defensa*0.1, dano*0.8))#entre mayor sea el numero de la defensa, menor será el daño
+            #se coloca como maximo self.dano, ya que esto signifiria que el escudo neutralizo el daño hasta un 80%
+            dano = round(dano - escudo)#se actualiza el daño total hecho
+
             print(f"\nDaño ocasionado: {dano}")
             self.op_vida -= dano
+
+
             sleep(2)
             #se verificara que no se haya derrotado el pokemon
             if self.op_vida <= 0:
-                print("Has derrotado a tu oponente")
+                print(f"\nHas derrotado a {self.oponente}")
                 self.modificar_stats(True)#False es porque perdio
                 batalla = False
             else:
-                print(f"Turno de {self.oponente}")
+                print(f"\nTurno de {self.oponente}")
                 sleep(2)
-                op_dano = randint(5, self.op_ataque)
-                print(f"\n{self.oponente} te ha ocasionado {op_dano} de daño")
+
+                op_dano = round(uniform(5, self.op_ataque))
+
+                print(f"\n{self.oponente} lanzo un golpe de {op_dano} de poder")
+                sleep(2)
+
+                escudo_poke = round(uniform(self.op_defensa*0.1, op_dano*0.8))#entre mayor sea el numero de la defensa, menor será el daño
+                op_dano = (op_dano - escudo_poke)
+
                 self.vida -= op_dano
+                print(f"\nHas recibido {op_dano} de daño\n")
+
                 if self.vida <= 0:
-                    print("Han derrotado a tu pokemon\n")
+                    print("\nHan derrotado a tu pokemon\n")
                     self.modificar_stats(False)#False es porque perdio
                     batalla = False
         
@@ -117,31 +167,7 @@ class Pokemon():
             json.dump(contenido, file, indent=4, sort_keys=True)
 
 
-
-    
-    def evolucionar(self):
-        pass
-
-    def __str__(self):
-        pass
-    
     # Al finalizar el programa automaticamente se ejecuta este metodo
-    """def __del__(self):
-        datos = {
-            'nombre':self.nombre,
-            'tipo':self.tipo,
-            'vida':int(self.vida),
-            'ataque':int(self.ataque),
-            'defensa':int(self.defensa),
-            'nivel':int(self.nivel),
-            'exp':int(self.xp)
-        }
-        # En un diccionario se guardan todos los datos del pokemon
-        # los datos int no se pueden escribir en un json, por lo que son pasados
-        # a str
-        guardarJson(self.nombre, datos)
-        # Se ejecuta la funcion para poder guardar todos los archivos a json
-    """
 
     def guardarPokemon(self):
         pokemon_dict = {

@@ -1,4 +1,6 @@
 from pokemon import *
+import platform
+import os
 
 def menu_principal():
     print('MENU PRINCIPAL')
@@ -45,6 +47,19 @@ def atraparPokemon(pokemones, pokedex):
         except:
             print('No existe el pokémon')
 
+def limpiar_pantalla():
+    sistema = platform.system()#comprueba el tipo de sistema
+    if sistema == "Linux" or sistema == "Darwin":
+        os.system("clear")#comando de limpiar pantalla para unix
+    elif sistema == "Windows":
+        os.system("cls")#comando de limpiar pantalla para msdos
+    else:
+        print("\nSistema no identificado\n")
+
+def pausar():#pausa la pantalla para que el usuario pueda ver los datos
+    input("Pulsa cualquier tecla para continuar...")
+
+
 def estadisticas(pokebolas):
     print("Estos son tus pokemones\n")
     for pokemon, stats in pokebolas.items():
@@ -56,19 +71,30 @@ def estadisticas(pokebolas):
 
 
 def duelo(pokebolas):
-    print("¿Qué pokemon deseas usar?\n")
+    print("\n¿Qué pokemon deseas usar?\n")
     for pokemon in pokebolas:
         print(f"{pokemon}")
+    print("\nRegresar")
+    bucle_elect = True
+    while bucle_elect:
+        try:
+            poke_selected = input("\n>>> ").capitalize()#pondra la primera letra en mayuscula para que coincida
+            if poke_selected.capitalize()== "Regresar":
+                print("\nVolviendo al menú principal\n")
+                break
+            stats = pokebolas[poke_selected]
+            batalla_pokemon = Pokemon(
+            stats['nombre'],
+            stats['tipo'],
+            stats['vida'],
+            stats['ataque'],
+            stats['defensa'],
+            stats['nivel'],
+            stats['exp'])
+            batalla_pokemon.pelear()
 
-    poke_selected = input(">>> ").capitalize()#pondra la primera letra en mayuscula para que coincida
-    stats = pokebolas[poke_selected]
-    batalla_pokemon = Pokemon(
-    stats['nombre'],
-    stats['tipo'],
-    stats['vida'],
-    stats['ataque'],
-    stats['defensa'],
-    stats['nivel'],
-    stats['exp'])
 
-    batalla_pokemon.pelear()
+            bucle_elect = False
+
+        except KeyError:
+            print("\nSelecciona un pokemon valido\n")
