@@ -9,6 +9,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 # el url de _pokemones.csv 
 
 diccionarioPokemon = {}
+diccionarioHistorial = {}
 # Diccionario que guarda los datos de los pokemones ya creados y por crear
 # y su contenido se lee y escribe en un json
 
@@ -45,6 +46,13 @@ def guardarJson(pokemon, stats):
         #sort_keys acomoda las claves en orden alfabetico
         #intent agrega tabulaciones
         # Escribimos los datos del pokemon en el json
+def crearHistoriaL(pokemon, stats):
+    global diccionarioHistorial
+    diccionarioHistorial[pokemon] = stats
+    with open('data/historial.json','w') as f:
+        json.dump(diccionarioHistorial,f, sort_keys=True, indent=4)
+
+
 
 # Esta funcion carga los datos leidos en el json
 def cargarJson():
@@ -59,6 +67,20 @@ def cargarJson():
     except FileNotFoundError: # Si no existe el diccionario
         return diccionarioPokemon
         # regresa el diccionario vacio
+def cargarHistorial():
+    global diccionarioHistorial
+    try: 
+        with open('data/historial.json') as f:
+        # Abre el archivo json 
+            diccionarioHistorial = json.load(f)
+            # Lee el contenido y lo guarda en la variable diccionarioPokemon
+            return diccionarioHistorial
+            # retorna el diccionario
+    except FileNotFoundError: # Si no existe el diccionario
+        return diccionarioHistorial
+        # regresa el diccionario vacio
+
+
 
 # Para tener una mejor visualizacion del json en visual studio code
 # shift + alt + f

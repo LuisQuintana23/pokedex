@@ -1,5 +1,6 @@
 from multiprocessing.sharedctypes import Value
 from random import randint, choice, uniform
+from matplotlib.pyplot import hist
 import pandas as pd
 import numpy as np
 from funciones_generales.archivos import *
@@ -136,7 +137,31 @@ class Pokemon():
         
 
         
-    
+    def guardar_historial(self, contenido):
+        ruta = "./data/historial.json"
+        #almacena todo los datos de la batalla actual
+        stats = contenido[self.nombre]
+        ataque = stats['ataque']
+        vida = stats['vida']
+        exp = stats['exp']
+        defensa = stats['defensa']
+        nivel = stats['nivel']
+
+        #carga el archivo
+        with open(ruta, 'r') as file:
+            historial = json.load(file)
+
+        #escribe el archivo
+        with open(ruta, 'w') as file:
+            historial[self.nombre]['ataque'].append(ataque)
+            historial[self.nombre]['defensa'].append(defensa)
+            historial[self.nombre]['vida'].append(vida)
+            historial[self.nombre]['exp'].append(exp)
+            historial[self.nombre]['nivel'].append(nivel)
+
+            json.dump(historial, file, indent=4, sort_keys=True)
+            print('\nDatos guardados con exito.\n')
+
     
     def modificar_stats(self, win):
         with open("./data/pokebolas.json") as file:
@@ -163,6 +188,7 @@ class Pokemon():
             print("HAS SUBIDO DE NIVEL".center(50, "/"))
             print("\nNivel actual: {}\nAtaque: +5\nDefensa: +5\nVida: +7\n".format(contenido[self.nombre]["nivel"]))
 
+        self.guardar_historial(contenido)
 
         with open("./data/pokebolas.json", "w") as file:#guarda el archivo json con los cambios
             json.dump(contenido, file, indent=4, sort_keys=True)
@@ -180,10 +206,20 @@ class Pokemon():
             'nivel':int(self.nivel),
             'exp':int(self.xp)
         }
+        historial_poke = {
+            'vida':[self.vida],
+            'ataque':[self.ataque],
+            'defensa':[self.defensa],
+            'nivel':[self.nivel],
+            'exp':[self.xp]
+        }
         # En un diccionario se guardan todos los datos del pokemon
         # los datos int no se pueden escribir en un json, por lo que son pasados
         # a str
+        #creara el historia con los valores iniciales
+
         guardarJson(self.nombre, pokemon_dict)
+        crearHistoriaL(self.nombre, historial_poke)
 
 if "__main__" == __name__:
     batalla_pokemon = Pokemon("Bulbasaur", "Electric", 49, 45, 49, 0, 0)

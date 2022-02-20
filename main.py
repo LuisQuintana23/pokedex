@@ -7,6 +7,7 @@ import os
 global pokemones, pokebolas
 pokedex = cargarPokedex() # Carga los datos generales de los pokemones
 pokebolas = cargarJson() # Carga los pokemones y datos que el usuario tiene
+historial = cargarHistorial()
 # si el usuario no tiene pokemones registrados, pokebolas estará vacio
 
 pokemones = {}
