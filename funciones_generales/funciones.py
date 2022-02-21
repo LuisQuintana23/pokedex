@@ -99,7 +99,7 @@ def estadisticas(pokebolas):
 
             stat_elect = input("\n>>").lower()
 
-            if stat_elect == "Experiencia":
+            if stat_elect == "experiencia":
                 stat_elect = "exp"
 
             #cargar historila y obtener la lista
