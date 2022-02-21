@@ -25,14 +25,14 @@ def cargarPokedex():
         pokedex = pd.read_csv('data/_pokemones.csv') 
         pokedex.set_index('Name', inplace = True)
         # Coloca el indice por nombre
-        return pokedex # Retorna todo el contenido del csv
+        return pokedex.head(167) # Retorna todo el contenido del csv
     except FileNotFoundError: # Archivo no encontrado
         url = 'https://raw.githubusercontent.com/LuisQuintana23/pokedex/main/data/_pokemones.csv'
         # Toma el csv de un repositorio en github
         pokedex = pd.read_csv(url) # lee el csv
         pokedex.set_index('Name', inplace = True) # Pone como indice el nombre de los pokemons
         pokedex.to_csv('data/_pokemones.csv') # Crea el archivo en la carpeta data
-        return pokedex # Devuelve el dataframe
+        return pokedex.head(167) # Devuelve el dataframe
 
 # Recibe el nombre del pokemon y sus datos
 def guardarJson(pokemon, stats):

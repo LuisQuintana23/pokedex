@@ -40,7 +40,7 @@ while True:
         Excepciones.validar_Main(entrada_Main)
 
         if entrada_Main == 1: # Imprimir pokedex
-            print(pokedex)
+            mostrar_pokemones()
         elif entrada_Main == 2: # Atrapar pokemon
             pokemones = atraparPokemon(pokemones, pokedex)
         elif entrada_Main == 3: # Estadisticas del pokemon

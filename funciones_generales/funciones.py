@@ -99,6 +99,9 @@ def estadisticas(pokebolas):
 
             stat_elect = input("\n>>").lower()
 
+            if stat_elect == "Experiencia":
+                stat_elect = "exp"
+
             #cargar historila y obtener la lista
             with open("./data/historial.json", "r") as file:
                 contenido = json.load(file)
@@ -141,3 +144,11 @@ def duelo(pokebolas):
 
         except KeyError:
             print("\nSelecciona un pokemon valido\n")
+
+
+def mostrar_pokemones():#obtienen del archivo json oponentes, los datos de pelea de los pokemones
+    with open("./data/oponentes.json", "r") as file:
+        contenido = json.load(file)
+        for pokemon, stats in contenido.items():#itera los pokemones y sus estadisticas
+            print("-------{}--------\n\nVida: {}\nAtaque: {}\nDefensa: {}\n".format(pokemon, stats["Attack"], 
+            stats["Defense"], stats["HP"]))
