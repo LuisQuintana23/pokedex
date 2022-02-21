@@ -3,12 +3,18 @@ from funciones_generales.funciones import *
 from funciones_generales.excepciones import *
 from pokemon import *
 import os
+import os.path
 
 global pokemones, pokebolas
 pokedex = cargarPokedex() # Carga los datos generales de los pokemones
 pokebolas = cargarJson() # Carga los pokemones y datos que el usuario tiene
 historial = cargarHistorial()
 # si el usuario no tiene pokemones registrados, pokebolas estará vacio
+
+if os.path.exists("./data/oponentes.json") == False:
+    guardarJsonTodos()#genera el archivo oponentes.json en caso de no existir
+
+
 
 pokemones = {}
 # En este diccionario se guarda los 'objetos' de los pokemones ya creados y por crear
